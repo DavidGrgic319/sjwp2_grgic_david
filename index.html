@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="hr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Moje zadaće</title>
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            min-height: 100vh;
+            color: white;
+
+            background:
+                radial-gradient(circle at 10% 10%, #4f46e5, transparent 30%),
+                radial-gradient(circle at 90% 90%, #9333ea, transparent 30%),
+                #0f172a;
+        }
+
+        /* HEADER */
+
+        header {
+            display: flex;
+            align-items: center;
+            gap: 18px;
+
+            padding: 35px 8%;
+        }
+
+        .logo {
+            width: 60px;
+            height: 60px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            font-size: 28px;
+
+            background: rgba(255,255,255,0.1);
+            border: 1px solid rgba(255,255,255,0.15);
+
+            border-radius: 18px;
+
+            backdrop-filter: blur(15px);
+        }
+
+        header h1 {
+            font-size: 28px;
+            margin-bottom: 5px;
+        }
+
+        header p {
+            color: #94a3b8;
+            font-size: 14px;
+        }
+
+        /* MAIN */
+
+        main {
+            width: 85%;
+            max-width: 900px;
+
+            margin: 40px auto 80px;
+        }
+
+        /* HERO */
+
+        .hero {
+            display: flex;
+            align-items: center;
+            gap: 25px;
+
+            padding: 35px;
+
+            background: rgba(255,255,255,0.08);
+
+            border: 1px solid rgba(255,255,255,0.12);
+
+            border-radius: 25px;
+
+            backdrop-filter: blur(15px);
+
+            box-shadow: 0 25px 60px rgba(0,0,0,0.25);
+        }
+
+        .subject-icon {
+            width: 80px;
+            height: 80px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            flex-shrink: 0;
+
+            font-size: 38px;
+
+            border-radius: 22px;
+
+            background: linear-gradient(
+                135deg,
+                #6366f1,
+                #a855f7
+            );
+
+            box-shadow: 0 10px 30px rgba(99,102,241,0.4);
+        }
+
+        .small-text {
+            color: #a78bfa;
+
+            font-size: 11px;
+            font-weight: bold;
+
+            letter-spacing: 2px;
+        }
+
+        .hero h2 {
+            font-size: 34px;
+            margin: 7px 0;
+        }
+
+        .hero p {
+            color: #94a3b8;
+        }
+
+        /* TITLE */
+
+        .section-title {
+            font-size: 25px;
+            margin: 45px 0 20px;
+        }
+
+        /* TASKS */
+
+        .tasks {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        /* TASK CARD */
+
+        .task {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+
+            padding: 20px;
+
+            color: white;
+            text-decoration: none;
+
+            background: rgba(255,255,255,0.07);
+
+            border: 1px solid rgba(255,255,255,0.1);
+
+            border-radius: 18px;
+
+            transition: 0.3s ease;
+        }
+
+        .task:hover {
+            transform: translateX(8px);
+
+            background: rgba(255,255,255,0.13);
+
+            border-color: rgba(167,139,250,0.4);
+
+            box-shadow: 0 15px 35px rgba(0,0,0,0.25);
+        }
+
+        /* NUMBER */
+
+        .number {
+            width: 55px;
+            height: 55px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            flex-shrink: 0;
+
+            border-radius: 15px;
+
+            background: linear-gradient(
+                135deg,
+                #6366f1,
+                #8b5cf6
+            );
+
+            font-weight: bold;
+            font-size: 15px;
+        }
+
+        /* TEXT */
+
+        .task-info {
+            flex: 1;
+        }
+
+        .task-info span {
+            color: #a78bfa;
+
+            font-size: 10px;
+            font-weight: bold;
+
+            letter-spacing: 1.5px;
+        }
+
+        .task-info h3 {
+            font-size: 19px;
+            margin: 5px 0;
+        }
+
+        .task-info p {
+            color: #94a3b8;
+            font-size: 13px;
+        }
+
+        /* ARROW */
+
+        .arrow {
+            color: #a78bfa;
+            font-size: 25px;
+
+            transition: 0.3s;
+        }
+
+        .task:hover .arrow {
+            transform: translate(4px, -4px);
+            color: white;
+        }
+
+        /* SPECIAL CARD */
+
+        .special {
+            border-color: rgba(168,85,247,0.2);
+
+            background: linear-gradient(
+                90deg,
+                rgba(99,102,241,0.12),
+                rgba(168,85,247,0.08)
+            );
+        }
+
+        /* FOOTER */
+
+        footer {
+            padding: 25px;
+
+            text-align: center;
+
+            color: #64748b;
+
+            font-size: 12px;
+        }
+
+        /* MOBITEL */
+
+        @media (max-width: 600px) {
+
+            header {
+                padding: 25px 5%;
+            }
+
+            header h1 {
+                font-size: 23px;
+            }
+
+            main {
+                width: 90%;
+            }
+
+            .hero {
+                padding: 25px;
+            }
+
+            .subject-icon {
+                width: 60px;
+                height: 60px;
+
+                font-size: 28px;
+            }
+
+            .hero h2 {
+                font-size: 26px;
+            }
+
+            .task {
+                padding: 15px;
+                gap: 14px;
+            }
+
+            .number {
+                width: 45px;
+                height: 45px;
+            }
+
+            .task-info h3 {
+                font-size: 16px;
+            }
+
+            .task-info p {
+                font-size: 11px;
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <header>
+
+        <div class="logo">
+            📚
+        </div>
+
+        <div>
+            <h1>David Grgic</h1>
+        </div>
+
+    </header>
+
+
+    <main>
+
+        <!-- PREDMET -->
+
+        <section class="hero">
+
+            <div class="subject-icon">
+                💻
+            </div>
+
+            <div>
+
+                <span class="small-text">
+                    PREDMET
+                </span>
+
+                <h2>
+                    Skriptni jezici i web programiranje
+                </h2>
+
+                
+
+            </div>
+
+        </section>
+
+
+        <!-- ZADAĆE -->
+
+        <h2 class="section-title">
+            Zadaće
+        </h2>
+
+
+        <div class="tasks">
+
+            <!-- ZADAĆA 1 -->
+
+            <a
+                href="https://example.com/zadaca-1"
+                target="_blank"
+                class="task"
+            >
+
+                <div class="number">
+                    01
+                </div>
+
+                <div class="task-info">
+
+                    <span>ZADAĆA</span>
+
+                    <h3>
+                        Prva zadaća
+                    </h3>
+
+                    <p>
+                        Klikni za otvaranje zadaće
+                    </p>
+
+                </div>
+
+                <div class="arrow">
+                    ↗
+                </div>
+
+            </a>
+
+
+            <!-- ZADAĆA 2 -->
+
+            <a
+                href="https://example.com/zadaca-2"
+                target="_blank"
+                class="task"
+            >
+
+                <div class="number">
+                    02
+                </div>
+
+                <div class="task-info">
+
+                    <span>ZADAĆA</span>
+
+                    <h3>
+                        Druga zadaća
+                    </h3>
+
+                    <p>
+                        Klikni za otvaranje zadaće
+                    </p>
+
+                </div>
+
+                <div class="arrow">
+                    ↗
+                </div>
+
+            </a>
+
+
+            <!-- ZADAĆA 3 -->
+
+            <a
+                href="https://example.com/zadaca-3"
+                target="_blank"
+                class="task"
+            >
+
+                <div class="number">
+                    03
+                </div>
+
+                <div class="task-info">
+
+                    <span>ZADAĆA</span>
+
+                    <h3>
+                        Treća zadaća
+                    </h3>
+
+                    <p>
+                        Klikni za otvaranje zadaće
+                    </p>
+
+                </div>
+
+                <div class="arrow">
+                    ↗
+                </div>
+
+            </a>
+
+
+            <!-- ZADAĆA 4 -->
+
+            <a
+                href="https://example.com/zadaca-4"
+                target="_blank"
+                class="task"
+            >
+
+                <div class="number">
+                    04
+                </div>
+
+                <div class="task-info">
+
+                    <span>ZADAĆA</span>
+
+                    <h3>
+                        Četvrta zadaća
+                    </h3>
+
+                    <p>
+                        Klikni za otvaranje zadaće
+                    </p>
+
+                </div>
+
+                <div class="arrow">
+                    ↗
+                </div>
+
+            </a>
+
+
+            
+
+        </div>
+
+    </main>
+
+
+    <footer>
+        © 2026 • Moje zadaće
+    </footer>
+
+</body>
+</html>
