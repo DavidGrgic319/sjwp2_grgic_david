@@ -11,18 +11,18 @@
         let c = document.getElementById("myCanvas");
         let ctx = c.getContext("2d");
 
-        //četverokut
+        
         ctx.beginPath();
         ctx.rect(0,0, 100,200);
         ctx.fillStyle ="blue";
         ctx.fill();
 
-        //krug
+      
         ctx.beginPath();
         ctx.arc(200,300, 80, 0,2 * Math.PI);
         ctx.stroke();
 
-        //trokut
+        
         ctx.beginPath();
         ctx.moveTo(300, 250);
         ctx.lineTo(400, 350);
