@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="hr">
+<head>
+  <meta charset="UTF-8">
+  <title>Skriptni jezici</title>
+  <link rel="stylesheet" href="./styles/style.css">
+</head>
+<body>
+
+<nav>
+  <ul>
+    <li><a href="./Sport.html">Sport</a></li>
+    <li><a href="Vijesti.html">Vijesti</a></li>
+    <li><a href="Novac.html">Novac</a></li>
+  </ul>
+</nav>
+
+<h1>Ponavljanje Canvas i  i SVG</h1>
+
+<div class="okvir">
+  <p><i>Canvas</i> je oznaka (tag) HTML5 standarda namijenjena crtanju.</p>
+  <p>Canvas je 2D crtaća platforma unutar web preglednika, a koristi JavaScript i HTML.</p>
+  <p>Upotrebom JavaScript-a se može pristupiti čitavom setu funkcija za crtanje linija,</p>
+    <p>pravokutnika, lukova, crta, teksta …</p>
+  <ul>
+    <li>Canvas API (API - Application Programming Interface - aplikacijsko programsko
+sučelje) osigurava alate za crtanje grafike putem JavaScript-a i HTML canvas <br>
+elementa.</li>
+    <li>Canvas API je uglavnom namijenjen 2D crtanju, iako postoji mogućnost rada i sa 3D <br>
+grafikom preko WebGL API –ja</li>
+    <li>Crtanje grafike s pomoću oznake canvas kombinira poznavanje HTML-a, CSS-a i <br>
+JavaScripta, pa ćemo njega učiti sljedećem poglavlju.</li>
+  </ul>
+
+  <hr>
+
+  <p><b>SVG</b>(Scalable Vector Graphics) većinom je manje težine u usporedbi sa Bitmap rasterskom
+slikom, koja posjeduje otprilike iste rezoluciju i grafički prikaz. <br>Uključivanje SVG-a u HTML dokument omogućava naknadno stiliziranje grafike putem CSS-a, <br>
+ali i manipulaciju JavaScript-om. Tako možemo promijeniti svojstva, kao što su: boja <br> pozadine, teksta, okvira, na isti način kao i za bilo koji HTML element. <br>
+ Zbog toga je omogućeno i animirati sve SVG objekte preko JavaScript biblioteke kao što je <br> jQuery.</p>
+ 
+
+  <hr>
+
+  <h3>Usporedba SVG-a i Canvasa </h3>
+  <table class="usporedba">
+    <tr><th>CATEGORY</th><th>canvas</th><th>SVG</th></tr>
+    <tr>
+      <td>Supporting elements</td>
+      <td>Bitmap, based on pixels</td>
+      <td>Vector illustration,based on graphic elements</td>
+    </tr>
+    <tr>
+      <td>Operation object</td>
+      <td>Single HTML element</td>
+      <td>various hraphic ele -ments</td>
+    </tr>
+    <tr>
+      <td>Driver</td>
+      <td>JavaScript and other script driven</td>
+      <td>Script or css driven</td>
+    </tr>
+    
+  </table>
+  <br>
+  <table class="kontakt">
+    <tr><th>Mjesec</th><th>Ušteda</th><th >Ušteda za blagajne</th></tr>
+    <tr><td>Siječan</td><td>$100</td> <td rowspan="2">$50</td></tr>
+    <tr><td>Veljača</td><td>$80</td></tr>
+    
+  </table>
+</div>
+
+<p>Ubacite sljedeću sliku ispod:</p>
+<img src="./vektor.png" alt="Vector i Raster">
+
+<h2>Primjer SVG-a i Canvasa</h2>
+
+      
+    <svg width="600" height="600">
+      <rect x="35" y="100" width="545" height="405" fill="lightblue" />
+
+      <rect x="35" y="503" width="545" height="135" fill="royalblue" />
+
+      <circle cx="480" cy="195" r="60" fill="yellow" />
+
+      <rect x="130" y="475" width="230" height="55" fill="blue" />
+
+      <polygon points="240,315 158,465 240,465" fill="white" />
+
+      <polygon points="250,315 335,465 250,465" fill="LightPink" />
+
+      <line
+        x1="245"
+        y1="235"
+        x2="245"
+        y2="475"
+        stroke="black"
+        stroke-width="14"
+      />
+
+      <polygon points="238,250 185,270 238,290" fill="red" />
+
+      <rect
+        x="35"
+        y="100"
+        width="545"
+        height="538"
+        fill="none"
+        stroke="black"
+        stroke-width="7"
+      />
+    </svg>
+
+
+
+<h2>Kontakt formular</h2>
+<form action="forma.html" method="get">
+  <input type="text" name="Ime" placeholder="Ime" >
+  <input type="password" name="Password" placeholder="Password" >
+  <input type="color" name="color" >
+  <button type="submit">Pošalji</button>
+  <button type="reset">Reset</button>
+</form>
+
+</body>
+</html>
