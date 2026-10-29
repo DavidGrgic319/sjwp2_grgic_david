@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="hr">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Uključi/isključi klasu</title>
+
+    <style>
+      .kartica {
+        padding: 20px;
+        margin: 10px;
+        border: 2px solid gray;
+        background-color: white;
+      }
+
+      .istaknuto {
+        background-color: yellow;
+        border: 2px solid red;
+        color: blue;
+        font-weight: bold;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="kartica">Ovo je moja kartica.</div>
+
+    <button id="gumb">Istakni karticu</button>
+
+    <script>
+      const kartica = document.querySelector(".kartica");
+      const gumb = document.getElementById("gumb");
+
+      gumb.onclick = function () {
+        kartica.classList.toggle("istaknuto");
+      };
+    </script>
+  </body>
+</html>

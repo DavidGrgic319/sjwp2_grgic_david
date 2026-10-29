@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="hr">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Promijeni sliku</title>
+  </head>
+  <body>
+    <img
+      id="slika"
+      src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR8_v8miG75uYDQ1l9sbx-qSwXeMSjBJ6ePhNCoLWLr6g&s=10"
+      width="300"
+    />
+
+    <br />
+
+    <button onclick="promijeniSliku()">Promijeni sliku</button>
+
+    <script>
+      function promijeniSliku() {
+        const slika = document.getElementById("slika");
+
+        slika.src =
+          "https://img.redbull.com/images/c_crop,x_65,y_0,h_2991,w_2243/c_fill,w_800,h_1067/q_auto:low,f_auto/redbullcom/2025/2/19/ovzcf2rebskzz1klz0th/red-bull-racing-rb21-gallery";
+      }
+    </script>
+  </body>
+</html>

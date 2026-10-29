@@ -1,0 +1,18 @@
+<!doctype html>
+<html lang="hr">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Promjena teksta klikom</title>
+  </head>
+  <body>
+    <button id="gumb">Prikaži poruku</button>
+    <p id="opis">Početni</p>
+
+    <script>
+      document.getElementById("gumb").onclick = function () {
+        document.getElementById("opis").textContent =
+          "Uspješno ste kliknuli gumb!";
+      };
+    </script>
+  </body>
+</html>

@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="hr">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Istakni upozorenje</title>
+  </head>
+  <body>
+    <p id="upozorenje">Početno upozorenje</p>
+
+    <button id="gumb">Prikaži upozorenje</button>
+
+    <script>
+      document.getElementById("gumb").onclick = function () {
+        let upozorenje = document.getElementById("upozorenje");
+
+        upozorenje.textContent = "Pažnja! Ovo je važno upozorenje!";
+        upozorenje.style.color = "red";
+        upozorenje.style.fontWeight = "bold";
+        upozorenje.style.backgroundColor = "yellow";
+      };
+    </script>
+  </body>
+</html>
