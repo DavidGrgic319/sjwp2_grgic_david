@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="hr">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Reakcija na tipkovnicu</title>
+  </head>
+  <body>
+    <input type="text" id="unos" placeholder="Upiši nešto" />
+
+    <p id="poruka"></p>
+    <p id="tipka"></p>
+
+    <script>
+      const unos = document.getElementById("unos");
+      const poruka = document.getElementById("poruka");
+      const tipka = document.getElementById("tipka");
+
+      document.addEventListener("keydown", function (event) {
+        if (document.activeElement !== unos) {
+          return;
+        }
+
+        tipka.textContent = "Pritisnuta tipka: " + event.key;
+
+        if (event.key === "Enter") {
+          poruka.textContent = "Potvrđeno";
+        }
+
+        if (event.key === "Escape") {
+          unos.value = "";
+        }
+      });
+    </script>
+  </body>
+</html>
