@@ -1,0 +1,17 @@
+
+<p id="upozorenje">Ovo je početni tekst upozorenja.</p>
+
+<button onclick="promijeniUpozorenje()">
+  Promijeni upozorenje
+</button>
+
+<script>
+function promijeniUpozorenje() {
+  let poruka = document.getElementById("upozorenje");
+
+  poruka.textContent = "UPOZORENJE! Dogodila se promjena teksta i stila.";
+  poruka.style.color = "red";
+  poruka.style.fontWeight = "bold";
+  poruka.style.backgroundColor = "yellow";
+}
+</script>

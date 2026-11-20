@@ -1,0 +1,27 @@
+
+<!DOCTYPE html>
+<html lang="hr">
+<head>
+    <meta charset="UTF-8">
+    <title>Prikaži ili sakrij tekst</title>
+</head>
+<body>
+
+    <p id="tekst">Ovo je odlomak koji možemo sakriti ili ponovno prikazati.</p>
+
+    <button onclick="prikaziSakrij()">Sakrij / Prikaži</button>
+
+    <script>
+        function prikaziSakrij() {
+            const odlomak = document.getElementById("tekst");
+
+            if (odlomak.style.display === "none") {
+                odlomak.style.display = "block";
+            } else {
+                odlomak.style.display = "none";
+            }
+        }
+    </script>
+
+</body>
+</html>

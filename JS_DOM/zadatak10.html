@@ -1,0 +1,29 @@
+
+<!DOCTYPE html>
+<html lang="hr">
+<head>
+    <meta charset="UTF-8">
+    <title>Promijeni sliku</title>
+</head>
+<body>
+
+    <img id="slika"
+         src="https://img.redbull.com/images/c_crop,x_1007,y_0,h_2646,w_1985/c_fill,w_450,h_600/q_auto,f_auto/redbullcom/2024/11/24/nrqoxx9as35r5ry8ashm/max-verstapen-2024-f1-world-champion-four"
+         
+         width="300">
+
+    <br><br>
+
+    <button onclick="promijeniSliku()">Promijeni sliku</button>
+
+    <script>
+        function promijeniSliku() {
+            const slika = document.getElementById("slika");
+
+            slika.src = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRUm-AwOC9Ifnf2a1HVRpJVMIR9N7SDibv92EWvfbTdfP0LVH8gGAa5MwU&s=10";
+            
+        }
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,39 @@
+
+<!DOCTYPE html>
+<html lang="hr">
+<head>
+  <meta charset="UTF-8">
+  <style>
+    .kartica {
+      padding: 20px;
+      margin: 20px 0;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      background-color: white;
+    }
+
+    .istaknuto {
+      background-color: yellow;
+      border: 3px solid orange;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="kartica" id="mojaKartica">
+    <h3>Moja kartica</h3>
+    <p>Ovo je sadržaj kartice.</p>
+  </div>
+
+  <button onclick="toggle()">Promijeni izgled</button>
+
+  <script>
+    function toggle() {
+      let kartica = document.getElementById("mojaKartica");
+      kartica.classList.toggle("istaknuto");
+    }
+  </script>
+
+</body>
+</html>
