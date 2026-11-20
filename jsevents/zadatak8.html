@@ -1,0 +1,100 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Reakcijski test</title>
+</head>
+<body>
+
+    <h1>Reakcijski test</h1>
+
+    <button id="pokreni">Pokreni</button>
+    <button id="ponovi">Ponovi</button>
+    <button id="otkazi">Otkaži</button>
+
+    <div id="povrsina" style="width:300px; height:150px; background-color:gray; margin-top:20px;"></div>
+
+    <p id="poruka">Klikni Pokreni za početak.</p>
+
+    <script>
+
+        let timer;
+        let pocetak;
+        let cekanje = false;
+        let aktivno = false;
+
+        const povrsina = document.getElementById("povrsina");
+        const poruka = document.getElementById("poruka");
+
+        function pokreniTest() {
+
+            if (cekanje || aktivno) {
+                return;
+            }
+
+            poruka.textContent = "Pričekaj da površina postane zelena!";
+            povrsina.style.backgroundColor = "gray";
+
+            cekanje = true;
+
+            let vrijeme = Math.floor(Math.random() * 4000) + 1000;
+
+            timer = setTimeout(function() {
+                povrsina.style.backgroundColor = "green";
+                poruka.textContent = "Klikni sada!";
+
+                cekanje = false;
+                aktivno = true;
+
+                pocetak = Date.now();
+
+            }, vrijeme);
+        }
+
+        function klikNaPovrsinu() {
+
+            if (cekanje) {
+                clearTimeout(timer);
+                cekanje = false;
+                poruka.textContent = "Prerano! Pokušaj ponovno.";
+                povrsina.style.backgroundColor = "gray";
+            }
+
+            else if (aktivno) {
+                let kraj = Date.now();
+                let reakcija = kraj - pocetak;
+
+                poruka.textContent = "Tvoje vrijeme reakcije je " + reakcija + " ms.";
+
+                aktivno = false;
+            }
+        }
+
+        function ponoviTest() {
+            clearTimeout(timer);
+
+            cekanje = false;
+            aktivno = false;
+
+            povrsina.style.backgroundColor = "gray";
+            poruka.textContent = "Klikni Pokreni za početak.";
+        }
+
+        document.getElementById("pokreni").addEventListener("click", pokreniTest);
+
+        povrsina.addEventListener("click", klikNaPovrsinu);
+
+        document.getElementById("ponovi").addEventListener("click", ponoviTest);
+
+        document.getElementById("otkazi").addEventListener("click", function() {
+            clearTimeout(timer);
+            cekanje = false;
+            aktivno = false;
+            povrsina.style.backgroundColor = "gray";
+            poruka.textContent = "Test je otkazan.";
+        });
+
+    </script>
+
+</body>
+</html>
